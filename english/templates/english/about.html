@@ -1,0 +1,31 @@
+{% extends 'english/layout.html' %}
+
+{% block content %}
+
+<div class="container text-center justify-content-center h-100">
+
+    <h1 class="fs-2 text-s mt-3">О проекте</h1>
+
+    <p class="text-success">Меня зовут Raziel и я являюсь <u>разработчиком данного приложения</u>, которое написано на
+        замечательном веб-фреймворке
+        Flask, языка программирования <b>Python</b>
+    <p class="text-success">Приложение создано чтобы показать работу <b>Flask View</b>, используя <mark>ORM SQLAlchemy</mark> совместно с
+        лёгковесной файловой базой данных SQLite </p>
+    <p class="text-success">В качестве <mark>css-фреймворка</mark> используется модуль bootstrap-flask c версией <b>Bootstrap 5</b></p>
+    <h2 class="fs-5">Что умеет веб-приложение?</h2>
+
+    <div class="">
+        <ol class="list-unstyled p-3 bg-info bg-opacity-10 border border-info border-top-0 rounded-end w-50 m-auto">
+            <li>Сохранять данные </li>
+            <li>Изменять данные</li>
+            <li>Удалять данные</li>
+            <li>Просматривать данные</li>
+            <li>Фильтровать данные</li>
+            <li><mark>Возможно что-то еще ;)</mark></li>
+        </ol>
+    </div>
+
+
+</div>
+
+{% endblock %}

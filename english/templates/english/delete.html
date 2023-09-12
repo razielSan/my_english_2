@@ -1,0 +1,13 @@
+{% extends 'english/layout.html' %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center h-100 align-items-center">
+    <form action="{{ url_for('delete') }}" method="post" class="delete_form">
+        <input type="text" name="word" class="word_input" placeholder="Введите слово для удаления" required
+               pattern="^[a-zA-Z.,!?'- ]+$"><br>
+        <input type="submit" value="Отправить" class="btn bnt-outline-success mt-2">
+    </form>
+</div>
+
+{% endblock content %}

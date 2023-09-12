@@ -1,0 +1,31 @@
+{% extends 'english/layout.html' %}
+{% from 'bootstrap5/pagination.html' import render_pagination %}
+{% block content %}
+
+<div class="container d-flex justify-content-center h-100 border border-start-0 border-end-0 rounded-5">
+
+    <div class="align-self-center w-100">
+        <h4 class="text-center p-2 bg-info bg-opacity-10 border border-info border-bottom-0 rounded-5">Все фразы</h4>
+
+        <ol class="list-unstyled p-2">
+            {% for word in posts.items %}
+            <li class="d-flex justify-content-between p-1"><i class="text-success">{{ word.word }}</i>
+                <i class="text-info">{{ word.translate }}</i>
+            </li>
+            {% endfor %}
+        </ol>
+
+        <div class="mt-4 d-flex">
+            <div class="text-success p-1 border border-info border-top-0 rounded-end align-items-center w-100">
+                <h4 class="align-items-center">{{ render_pagination(posts, endpoint='show', size='sm',
+                    align='center')}}</h4>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock content %}

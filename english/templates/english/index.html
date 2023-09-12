@@ -1,0 +1,51 @@
+{% extends 'english/layout.html' %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center h-100">
+
+
+    <div class="align-self-center text-center">
+
+        <div class="text-secondary">
+            <h4 class=" p-1 bg-info bg-opacity-10 border rounded-bottom">
+                {{ random_phrase.word }}</h4>
+            <div class="d-flex justify-content-around p-3">
+                <form action="{{ url_for('index') }}" method="get" class="">
+
+                    <input type="submit" value="Случайная запись" class="btn btn-primary btn-sm">
+
+                </form>
+
+
+                <div class="">
+                    <a href="#nav">
+                        <button class="btn btn-warning btn-sm">Забыли перевод?</button>
+                    </a>
+                </div>
+            </div>
+            <div class="expandable mb-3 mt-3 bg-info bg-opacity-10  rounded-top" id="nav">
+                <p class="align-items-center">{{ random_phrase.translate }}</p>
+            </div>
+
+        </div>
+
+        <div class="mt-5">
+            <p class="fs-6 text-center">В нашей базе находится <small class="fs-6 text-info">{{ count_phrase }}</small>
+                фраз и
+                их
+                переводов с английского языка на русский</p>
+            <form class="d-flex" role="search" action="{{ url_for('search') }}" method="get">
+                <input class="form-control me-2" type="search" placeholder="Желаете что-то найти?"
+                       aria-label="Search"
+                       name="q">
+                <button class="btn btn-outline-success" type="submit">Найти</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock content %}

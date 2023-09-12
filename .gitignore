@@ -1,0 +1,4 @@
+__pycache__
+migrations
+english/.env
+english/__pycache__

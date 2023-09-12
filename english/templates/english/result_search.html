@@ -1,0 +1,43 @@
+{% extends 'english/layout.html' %}
+
+{% block content %}
+
+    <div class="container d-flex-justify-content-center h-100">
+        <div class="w-100">
+            <p class=" text-center p-1 bg-info bg-opacity-10 border border-info border-bottom-0 rounded-end align-self-center">
+                Результат поиска
+                <mark><b>{{ keyword }}</b></mark>
+                ({{ searching.count() }})
+            </p>
+            {% if searching.count() %}
+
+                <table class="w-100 m-auto">
+                    <tr class="text-center text-primary bg-secondary bg-opacity-10 rounded-top">
+                        <th>Фраза</th>
+                        <th>Перевод</th>
+                    </tr>
+                    {% for phrase in searching %}
+
+                        <tr class="text-center text-success">
+                            <td class="">
+                                <p class=""> {{ phrase.word }}</p>
+                            </td>
+                            <td class="text-center">
+                                <p class="text-info">{{ phrase.translate }}</p>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                </table>
+        </div>
+        {% else %}
+        <div class="text-center d-flex h-100">
+            <div class="align-self-center m-auto">
+                <img src="{{ url_for('static', filename='search_404/nothing-found.png') }}" width="360" alt="not found">
+                <p class="mt-3">Вернитесь на <a href="{{ url_for('index') }}">Страницу поиска и попробуйте снова</a></p>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

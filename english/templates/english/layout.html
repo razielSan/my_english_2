@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    {{ bootstrap.load_css() }}
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    
+
+{% include 'english/nav.html' %}
+
+<div class="w-100 m-auto text-center mt-2">
+
+    {% from 'bootstrap5/utils.html' import render_messages %}
+    {{ render_messages(dismissible=True, dismiss_animate=True) }}
+
+</div>
+
+<div class="wrapper">
+    <div class="content m-auto h-100">
+        {% block content %}
+        
+        
+        {% endblock content %}
+    </div>
+
+
+    <div class="footer bg-light">
+        <div class="d-flex h-100">
+            <div class="col-12 text-center align-self-center">
+                <small class="">Права не дают права берут</small>
+            </div>
+        </div>
+    </div>
+    
+    {{ bootstrap.load_js() }}
+</div>
+</body>
+</html>

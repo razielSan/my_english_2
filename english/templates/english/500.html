@@ -1,0 +1,18 @@
+{% extends 'english/layout.html' %}
+
+{% block content %}
+
+<div class="container d-flex m-auto text-center rounded-0 h-100">
+
+    <div class="align-self-center m-auto w-100">
+
+        <p> {{ e }}</p>
+        <div class="">
+            <img src="{{ url_for('static', filename='img_500/500.png') }}" width="360" alt="404 error">
+        </div>
+        <p>Венрнитесь на <a href="{{ url_for('index') }}">главную страницу приложения</a></p>
+    </div>
+
+</div>
+
+{% endblock content %}

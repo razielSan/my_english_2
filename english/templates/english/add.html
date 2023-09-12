@@ -1,0 +1,20 @@
+{% extends 'english/layout.html' %}
+
+{% block content %}
+
+    <div class="container d-flex justify-content-center h-100">
+
+        <form action="{{ url_for('add') }}" method="post" class="add_data_form align-self-center">
+
+            <input type="text" name="word" class="word_input" placeholder="Введите английское слово" required
+                   pattern="^[a-zA-Z.,?!'- ]+$" autofocus><br>
+            <input type="text" name="translate" class="translate_input" placeholder="Введите перевод слова на русском"
+                   required
+                   pattern="^[а-яёА-ЯЁ,.?!'- ]+$"><br>
+            <input type="submit" value="Создать" class="btn btn-outline-success mt-2">
+
+        </form>
+
+    </div>
+
+{% endblock content%}

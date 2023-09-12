@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+        <div class="logo d-flex">
+            <a class="navbar-brand text-success" href="{{ url_for('index') }}"><i class="align-self-center fs-2">𝕄𝕪
+                𝔼𝕟𝕘𝕝𝕚𝕤𝕙 ℂ𝕠𝕒𝕔𝕙</i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="menu">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
+                     <li class="nav-item">
+                        <a class="nav-link  text-info" href="{{ url_for('show') }}">Смотреть</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link  text-success" href="{{ url_for('add') }}">Добавить</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="{{ url_for('update') }}">Изменить</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="{{ url_for('delete') }}">Удалить</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">О проекте</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
